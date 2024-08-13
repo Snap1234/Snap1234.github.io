@@ -1,0 +1,45 @@
+html {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #000428, #004e92);
+}
+
+body {
+  color: #f5f5dc;
+}
+.color-change-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Initial color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  user-select: none; /* Prevent text selection */
+}
+
+/* The button's pressed state when the checkbox is checked */
+#color-toggle:checked + .color-change-button {
+  background-color: green; /* New color when pressed */
+}
+
+/* Optional: Change color on hover */
+.color-change-button:hover {
+  background-color: yellow; /* Hover color */
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #444;
+  color: #f5f5dc;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:hover {
+  background-color: #555;
+}
