@@ -12,9 +12,11 @@ body {
   border: 2px dashed red;
   display: flex;
   align-items: center;
+  max-width: 900px;
   justify-content: space-between;
   padding: 20px;
 }
+
 
 .color-change-button {
   display: inline-block;
