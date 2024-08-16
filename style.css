@@ -17,6 +17,9 @@ body {
   padding: 20px;
 }
 
+.profile-pic {
+  width: 75%;
+}
 
 .color-change-button {
   display: inline-block;
