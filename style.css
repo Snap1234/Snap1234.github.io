@@ -7,26 +7,39 @@ html {
 body {
   color: #f5f5dc;
 }
+
+.intro {
+  border: 2px dashed red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
 .color-change-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff; /* Initial color */
+  background-color: #007bff;
+  /* Initial color */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
-  user-select: none; /* Prevent text selection */
+  user-select: none;
+  /* Prevent text selection */
 }
 
 /* The button's pressed state when the checkbox is checked */
-#color-toggle:checked + .color-change-button {
-  background-color: green; /* New color when pressed */
+#color-toggle:checked+.color-change-button {
+  background-color: green;
+  /* New color when pressed */
 }
 
 /* Optional: Change color on hover */
 .color-change-button:hover {
-  background-color: yellow; /* Hover color */
+  background-color: yellow;
+  /* Hover color */
 }
 
 .download-btn {
