@@ -16,6 +16,7 @@ body {
   max-height: 500px;
   justify-content: space-between;
   padding: 20px;
+  margin: 0 auto;
 }
 
 .profile-pic {
