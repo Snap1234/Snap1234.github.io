@@ -12,15 +12,15 @@ body {
   border: 2px dashed red;
   display: flex;
   align-items: center;
-  max-width: 700px;
-  max-height: 500px;
-  justify-content: space-between;
+
+  justify-content: space-around;
   padding: 20px;
   margin: 0 auto;
 }
 
 .profile-pic {
-  width: 30%;
+  max-height: 300px;
+  width: auto;
 }
 
 .color-change-button {
