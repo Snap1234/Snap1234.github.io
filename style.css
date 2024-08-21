@@ -9,13 +9,12 @@ body {
 }
 
 .intro {
-  border: 2px dashed red;
   display: flex;
   align-items: center;
-
   justify-content: space-around;
   padding: 20px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .profile-pic {
@@ -63,3 +62,62 @@ body {
 .download-btn:hover {
   background-color: #555;
 }
+
+
+
+
+
+.intro, .intro::before, .intro::after {
+  box-sizing: border-box;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: -3;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2rem;
+  background:inherit;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: conic-gradient(transparent, rgba(168, 239, 255, 1), transparent 30%);
+    animation: rotate 4s linear infinite;
+  }
+
+.intro::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+  background: linear-gradient(135deg, #000428, #004e92);
+    border-radius: 5px;
+  }
+
+
+
+
