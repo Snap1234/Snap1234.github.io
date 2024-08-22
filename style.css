@@ -2,10 +2,14 @@ html {
   height: 100%;
   width: 100%;
   background: linear-gradient(135deg, #000428, #004e92);
+  align-items: center;
+  justify-content: center; 
 }
 
 body {
   color: #f5f5dc;
+  align-items: center;
+  justify-content: center; 
 }
 
 .intro {
@@ -13,13 +17,30 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: 20px;
-  margin: 0 auto;
+  margin: auto;
+  max-width: 900px;
+  min-height: 550px;
   flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#intro-text > p{
+  font-size: 1.3em;       /* Increase font size */
+  line-height: 1.6em;     /* Add breathing room between lines */
+  color: #e0e0e0;         /* Use softer white for readability */
+  font-family: 'Lato', sans-serif; /* Modern font for clarity */
+  margin: 20px 0; 
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .profile-pic {
   max-height: 400px;
   width: auto;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .color-change-button {
@@ -84,7 +105,7 @@ body {
   flex-wrap: wrap;
   position: relative;
   z-index: -3;
-  margin: 20px;
+  margin: auto;
   border-radius: 10px;
   overflow: hidden;
   padding: 2rem;
@@ -114,7 +135,8 @@ body {
     top: 6px;
     width: calc(100% - 12px);
     height: calc(100% - 12px);
-  background: linear-gradient(135deg, #000428, #004e92);
+    background-image: url('img/background.jpg');
+    background-size: cover;
     border-radius: 5px;
   }
 
