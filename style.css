@@ -140,6 +140,15 @@ body {
     border-radius: 5px;
   }
 
-
+@media (max-width: 480px) {
+  .profile-pic {
+    max-height: 300px;
+  }
+  #intro-text > p{
+    font-size: 1.0em;       /* Increase font size */
+    line-height: 1.2em;           
+    margin: 12px 0; 
+  }
+}
 
 
