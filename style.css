@@ -1,15 +1,16 @@
-html {
+html, body {
   height: 100%;
   width: 100%;
-  background: linear-gradient(135deg, #000428, #004e92);
-  align-items: center;
-  justify-content: center; 
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  background: linear-gradient(135deg, #000428, #004e92);
+  background-attachment: fixed;
   color: #f5f5dc;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .intro {
@@ -207,4 +208,153 @@ body {
   }
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 10px;
+  position: relative;
+  padding-bottom: 20px;
+}
 
+.about::after,
+.about::before,
+.about > :last-child::after {
+  content: '';
+  position: absolute;
+  background-color: #f5f5dc;
+  opacity: 0;
+}
+
+.about::before {
+  width: 2px;
+  height: 0;
+  top: 50%;
+  right: 0;
+  animation: growVertical linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
+}
+
+.about::after {
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  animation: growHorizontal linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
+}
+
+.about > :last-child::after {
+  width: 2px;
+  height: 0;
+  left: 0;
+  bottom: 0;
+  animation: growVertical linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
+}
+
+@keyframes growHorizontal {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes growVertical {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 50%;
+    opacity: 1;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .about::before,
+  .about::after,
+  .about > :last-child::after {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  .about::before { animation-delay: 0.5s; }
+  .about::after { animation-delay: 0s; }
+  .about > :last-child::after { animation-delay: 1s; }
+}
+
+// Fallback for browsers that don't support scroll-timeline
+@supports not (animation-timeline: scroll()) {
+  .about::before,
+  .about::after,
+  .about > :last-child::after {
+    animation-timeline: none;
+  }
+}
+
+.large-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  margin: 60px auto;
+  max-width: 900px;
+  min-height: 500px; // Increased from 300px to 500px
+  border-radius: 15px;
+  background-color: rgba(245, 245, 220, 0.05); // Slightly more transparent
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.large-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.large-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 78, 146, 0.3), rgba(0, 4, 40, 0.3));
+  z-index: -1;
+  animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.large-box h2 {
+  color: #f5f5dc;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.large-box p {
+  color: #e0e0e0;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 1.2em;
+  max-width: 80%;
+}
