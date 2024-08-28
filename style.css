@@ -146,10 +146,15 @@ body::before {
 }
 
 .profile-pic {
-  max-height: 400px;
+  max-height: 200px;
+  max-width: 200px;
   width: auto;
-  mask-image: linear-gradient(to bottom, #000, transparent);
+  mask-image: linear-gradient(to bottom, #000 30%, transparent);
   animation: fadeIn 1s ease-in-out;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 0.8 / 1;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
 }
 
 .download-btn {
