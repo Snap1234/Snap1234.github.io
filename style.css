@@ -373,11 +373,18 @@ body::before {
 .superwrap{
   display: grid;
   position: absolute;
-  height: 40px;
+  height: 30px;
   place-items: center;
   right:80px;
-  top:20px;
+  top:10px;
 }
+
+@media (max-width: 768px) {
+  .superwrap {
+    right: 20px;
+  }
+}
+
 .social-wrapper{
   padding: 5px;
   border-radius:50px;
