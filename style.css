@@ -370,100 +370,112 @@ body::before {
   position: relative;
 }
 
-.resume-dropdown {
+.superwrap{
+  display: grid;
   position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
-  display: inline-block;
+  height: 40px;
+  place-items: center;
+  right:80px;
+  top:20px;
+}
+.social-wrapper{
+  padding: 5px;
+  border-radius:50px;
+  height:30px;
+  box-sizing: border;
+  background: linear-gradient(45deg, #007ab2, #729bb6);
+  box-shadow: 0px 5px 3px  rgba(0,0,0,0.1);
 }
 
-.resume-dropdown-btn {
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.9);
-  padding: 10px 0;
-  border: none;
+ .social-button{
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display:inline-block;
+  width: 30px;
+  height:30px;
+  margin: -1px 5px;
+  overflow: hidden;
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Ensures the color is the same as the surrounding text */
+  border-radius: 50px;
   cursor: pointer;
+  box-shadow: 0px 5px 3px  rgba(0,0,0,0.1);
+  transition: width 0.3s ease-out, transform 0.1s ease-in-out;
+}
+
+.social-button:active{
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+  transform:translateY(2px);
+}
+
+.social-icon{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
   text-align: center;
-  text-decoration: underline;
+  border-radius: 50px;
+  
+  line-height: 30px;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 1),
+   0 0 10px rgba(255, 255, 255, 1),
+   0 0 15px rgba(0, 200, 255, 1);
+}
+.social-button:hover{
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 1px rgba(255, 255, 255, 1),
+   0 0 10px rgba(255, 255, 255, 1),
+    0 0 15px rgba(0, 200, 255, 1);
+  width: 90px;
+}
+
+.social-button:hover .social-icon{
+  text-shadow: 
+    0 0 5px white,     /* Small white shadow close to the element */
+    0 0 15px white,    /* Larger, soft shadow for glow */
+    0 0 30px white,    /* Larger white glow effect */
+    0 0 50px white;    /* Even larger for brilliance */
+}
+
+.social-button:nth-child(2):hover{
+  width: 75px;
+}
+
+.social-button i{
+  font-size: 17px;
+  color: green;
+  animation: spin_n_grow 0.5s linear, neon_glow 5s linear infinite;
+}
+
+@keyframes spin_n_grow{
+  0% {
+    transform: scale(1) rotate(0deg); /* Normal size, no rotation */
+  }
+
+  50% {
+    transform: scale(1.5) rotate(360deg); /* Back to original size and complete two rotations */
+  }
+  80% {
+    transform: scale(1.5) rotate(360deg); /* Back to original size and complete two rotations */
+  }
+  100%{
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@keyframes neon_glow{
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+
+.social-button span{
+  text-align: center;
   display: inline-block;
-}
-
-.resume-dropdown-content {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  min-width: 120px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-  z-index: 1;
-}
-
-.resume-dropdown-content a {
-  color: rgba(255, 255, 255, 0.9);
-  padding: 10px 15px;
-  text-decoration: none;
-  display: block;
-}
-
-.resume-dropdown-btn:hover + .resume-dropdown-content,
-.resume-dropdown-content:hover {
-  display: block;
-}
-
-.email-icon {
-  margin-left: 30px;
+  font-size:12px;
+  font-weight:500;
+  color:#e0e0e0;
   position: relative;
-  cursor: pointer;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.email-icon i {
-  font-size: 24px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.email-icon::after {
-  content: "chatelainlacasse@hotmail.com";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  color: rgba(255, 255, 255, 0.9);
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 14px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.email-icon:hover::after {
-  opacity: 1;
-}
-
-@media (max-width: 768px) {
-  .resume-dropdown {
-    right: 20px;
-    left: auto;
-    flex-direction: row-reverse;
-  }
-
-  .email-icon {
-    margin-left: 0;
-    margin-right: 30px;
-  }
-}
-
-@media (hover: none) {
-  .resume-dropdown-btn:focus + .resume-dropdown-content,
-  .resume-dropdown-content:hover {
-    display: block;
-  }
+  top: -2px;
 }
