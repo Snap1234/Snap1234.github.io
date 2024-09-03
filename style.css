@@ -258,7 +258,7 @@ body::before {
 }
 
 .large-box {
-  display: flex;
+  display: none; /* Add this line to hide the projects section */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -508,4 +508,357 @@ body::before {
     0 0 30px white,    /* Larger white glow effect */
     0 0 50px white;    /* Even larger for brilliance */
   }
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background: rgba(0, 78, 146, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, rgba(168, 239, 255, 0.3), transparent 30%);
+  animation: rotate 4s linear infinite;
+  z-index: 1;
+}
+
+.contact-form::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: rgba(0, 78, 146, 1);
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.contact-form form {
+  position: relative;
+  z-index: 3;
+}
+
+.contact-form h2 {
+  color: #f5f5dc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f5f5dc;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #a0a0a0;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #00a1ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #0081cc;
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    margin: 40px 20px;
+  }
+}
+
+.wrapper-skills{
+  max-width: 900px;
+  margin: 0 auto; /* Centers the element horizontally */
+  padding: 0 20px; /* Adds some padding on the sides */
+}
+
+.wrapper-skills *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 40px;
+  padding-top: 30px;
+}
+
+.sub-title span {
+  color: #0ef;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container1 {
+  width: 400px;
+  height: 400px;
+  padding: 25px 5px;
+  margin-left: 25px;
+  margin-top: 5px;
+  margin-right: 25px;
+}
+
+#radial-container{
+  margin-top: 65px;
+}
+
+.heading {
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  margin-bottom: 10px;
+}
+
+.bar{
+  font-size: 23px;
+}
+
+.Technical-bars .bar{
+  margin:10px 0;
+}
+
+.Technical-bars .bar:first-child{
+  margin-top: 0;
+}
+
+.Technical-bars .bar:last-child{
+  margin-bottom: 0;
+}
+
+.Technical-bars .bar .info{
+  margin-bottom: 5px;
+}
+
+.Technical-bars .bar .info span{
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+
+.Technical-bars .bar .progress-line{
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  height: 5px;
+  background-color: black;
+  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+@keyframes animate{
+  100%{
+    transform: scaleX(1);
+  }
+}
+
+.Technical-bars .bar .progress-line span{
+  height: 100%;
+  background-color: #0ef;
+  position: absolute;
+  border-radius: 10px;
+  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.progress-line.python span{
+  width: 100%;
+}
+.progress-line.web span{
+  width: 70%;
+}
+.progress-line.sql span{
+  width: 80%;
+}
+.progress-line.c span{
+  width: 60%;
+}
+.progress-line.java span{
+  width: 60%;
+}
+
+.progress-line span::after{
+  position: absolute;
+  padding: 1px 8px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  top: -28px;
+  right: -20px;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+
+.progress-line.python span::after{
+  content: "100%";
+}
+
+.progress-line.web span::after{
+  content: "70%";
+}
+.progress-line.sql span::after{
+  content: "80%";
+}
+.progress-line.c span::after{
+  content: "60%";
+}
+.progress-line.java span::after{
+  content: "60%";
+}
+
+.progress-line span before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 7px solid trasparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  top:-10px;
+  right: 0;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+
+@keyframes showText{
+  100%{
+    opacity: 1;
+  }
+}
+
+.radial-bars{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.radial-bars .radial-bar{
+  width: 50%;
+  height: 170px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.radial-bars .radial-bar svg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 120px;
+  height: 160px;
+}
+.radial-bars .radial-bar .progress-bar{
+  stroke-width: 10;
+  stroke: black;
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+  animation: animate-bar 1s linear forwards;
+}
+
+@keyframes animate-bar{
+  100%{
+    stroke-dashoffset: -1;
+  }
+}
+
+.path{
+  stroke-width: 10;
+  stroke: #0ef;
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+}
+.path-1{animation: animate-path1 1s linear forwards;}
+.path-2{animation: animate-path2 1s linear forwards;}
+.path-3{animation: animate-path3 1s linear forwards;}
+.path-4{animation: animate-path4 1s linear forwards;}
+
+@keyframes animate-path1{
+  100%{
+    stroke-dashoffset: 150;
+  }
+}
+
+@keyframes animate-path2{
+  100%{
+    stroke-dashoffset: 75;
+  }
+}
+@keyframes animate-path3{
+  100%{
+    stroke-dashoffset: 50;
+  }
+}
+@keyframes animate-path4{
+  100%{
+    stroke-dashoffset: 50;
+  }
+}
+
+.radial-bar .percentage{
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+.progress-bar .text{
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
 }
