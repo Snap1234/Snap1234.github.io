@@ -599,8 +599,8 @@ body::before {
   max-width: 900px;
   margin: 0 auto; /* Centers the element horizontally */
   padding: 0 20px; /* Adds some padding on the sides */
+  margin-top: 30px;
 }
-
 
 
 .wrapper-skills *{
@@ -610,18 +610,19 @@ body::before {
   font-family: 'poppins', sans-serif;
 }
 
-.sub-title {
+.wrapper-skills .sub-title {
   text-align: center;
   font-size: 40px;
   padding-bottom: 40px;
   padding-top: 30px;
 }
 
-.sub-title span {
+
+.wrapper-skills .sub-title span {
   color: #0ef;
 }
 
-section {
+.wrapper-skills section {
   display: flex;
   flex-wrap: wrap;
 }
@@ -635,8 +636,15 @@ section {
   margin-right: 25px;
 }
 
+.wrapper-skills #skills{
+  flex: 1;
+  max-width: 80%;
+  min-width: 35%;
+}
+
 #radial-container{
   margin-top: 65px;
+  width: 320px
 }
 
 .heading {
@@ -772,6 +780,12 @@ section {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
+}
+
+@media (max-width: 703px) {
+  .radial-bars{
+    width: 120%;
+  }
 }
 
 .radial-bars .radial-bar{
