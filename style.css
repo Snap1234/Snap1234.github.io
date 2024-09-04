@@ -782,7 +782,7 @@ body::before {
   align-items: flex-start;
 }
 
-@media (max-width: 703px) {
+@media (max-width: 703px) and (min-width: 475px) {
   .radial-bars{
     width: 120%;
   }
