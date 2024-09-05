@@ -513,37 +513,15 @@ body::before {
   max-width: 600px;
   margin: 60px auto;
   padding: 30px;
-  background: rgba(0, 78, 146, 0.8);
+  background: rgba(0, 78, 146, 0.3); /* More transparent background */
   border-radius: 15px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
 }
 
-.contact-form::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: conic-gradient(transparent, rgba(168, 239, 255, 0.3), transparent 30%);
-  animation: rotate 4s linear infinite;
-  z-index: 1;
-}
-
+/* Remove the ::before and ::after pseudo-elements */
+.contact-form::before,
 .contact-form::after {
-  content: '';
-  position: absolute;
-  inset: 3px;
-  background: rgba(0, 78, 146, 1);
-  border-radius: 12px;
-  z-index: 2;
-}
-
-.contact-form form {
-  position: relative;
-  z-index: 3;
+  display: none;
 }
 
 .contact-form h2 {
@@ -557,7 +535,7 @@ body::before {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: none;
+  border: 2px solid #0ef; /* Add cyan border */
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.1);
   color: #f5f5dc;
@@ -577,16 +555,17 @@ body::before {
   display: block;
   width: 100%;
   padding: 10px;
-  background: #00a1ff;
-  color: #fff;
+  background: #0ef; /* Cyan button color */
+  color: #000; /* Black text for contrast */
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-weight: bold;
 }
 
 .contact-form button:hover {
-  background: #0081cc;
+  background: #00c8ff; /* Lighter cyan on hover */
 }
 
 @media (max-width: 768px) {
