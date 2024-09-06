@@ -516,6 +516,33 @@ body::before {
   }
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .social-button:hover {
+    width: 30px;
+    text-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .social-button:nth-child(2):hover {
+    width: 30px;
+  }
+
+  .social-button:hover .social-icon {
+    text-shadow: 0 0 1px rgba(255, 255, 255, 1),
+     0 0 10px rgba(255, 255, 255, 1),
+     0 0 15px rgba(0, 200, 255, 1);
+  }
+
+  /* Add active state for touch devices */
+  .social-button:active .social-icon {
+    text-shadow: 
+      0 0 5px white,
+      0 0 15px white,
+      0 0 30px white,
+      0 0 50px white;
+  }
+}
+
 .contact-form {
   max-width: 600px;
   margin: 60px auto;
