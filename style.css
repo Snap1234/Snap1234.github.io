@@ -824,6 +824,7 @@ body::before {
 }
 
 .timeline::before {
+  visibility: hidden;
   content: '';
   position: absolute;
   width: 2px;
@@ -838,12 +839,12 @@ body::before {
   margin-bottom: 40px;
 }
 
-.timeline-item:nth-child(even) {
+.timeline-item:nth-child(odd) {
   float: right;
   padding-left: 50px;
 }
 
-.timeline-item:nth-child(odd) {
+.timeline-item:nth-child(even) {
   float: left;
   padding-right: 50px;
   text-align: right;
@@ -866,11 +867,11 @@ body::before {
   top: 20px;
 }
 
-.timeline-item:nth-child(even) .timeline-content::after {
+.timeline-item:nth-child(odd) .timeline-content::after {
   left: -60px;
 }
 
-.timeline-item:nth-child(odd) .timeline-content::after {
+.timeline-item:nth-child(even) .timeline-content::after {
   right: -60px;
 }
 
@@ -893,6 +894,7 @@ body::before {
 
   .timeline::before {
     left: -13px;
+    visibility: visible;
   }
   
   .timeline-item {
@@ -922,6 +924,10 @@ body::before {
     right: auto !important;
     width: 15px;
     height: 15px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content::after{
+    left: -40px !important;
   }
 
   .timeline-content h3 {
